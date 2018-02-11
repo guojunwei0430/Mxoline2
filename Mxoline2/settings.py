@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'organization',
     'xadmin',
     'crispy_forms',
+    'captcha',
 ]
 
 AUTH_USER_MODEL = "users.UserProfile"
@@ -136,3 +137,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomBackend',
+
+)
+
+EMAIL_HOST = "smtp.qq.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "mxonline.mtianyan.cn"
+EMAIL_HOST_PASSWORD = " "
+EMAIL_USE_TLS= True
+EMAIL_FROM = "1321751652@qq.com"
+
